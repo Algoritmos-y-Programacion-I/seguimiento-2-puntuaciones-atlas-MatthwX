@@ -1,8 +1,11 @@
 // Análisis: 
-// Descripción del programa:
-// Entradas:
-// Salidas:
-// Ejemplo:
+// Descripción del programa:El código AtlasPuntuaciones permite gestionar las puntuaciones obtenidas por los jugadores en un torneo de videojuegos.
+// Entradas: Número de jugadores - Número de rondas - Puntuaciones de los jugadores.
+// Salidas: Puntuación total y promedio de cada jugador - Jugador con la puntuación más alta
+// Ejemplo: Jugador 1 - Puntaje Total: 330, Promedio: 82.5
+//			Jugador 2 - Puntaje Total: 250, Promedio: 62.5
+//			Jugador 3 - Puntaje Total: 350, Promedio: 87.5
+// 			El jugador con la puntuación más alta es: Jugador 3
 
 
 package ui; 
