@@ -16,9 +16,7 @@ public class AtlasPuntuaciones {
 		mainApp.run();
 	}
 
-
 	private Scanner escaner;
-
 
 	// Declaración de nuestras constantes a utilizar
 	int numJugadores;
@@ -30,7 +28,6 @@ public class AtlasPuntuaciones {
 	private AtlasPuntuaciones() {
 		escaner = new Scanner(System.in);
 	}
-	
 	
 	public void run()
 	{
@@ -72,12 +69,19 @@ public class AtlasPuntuaciones {
 			puntuacionesTotal[i] = calcularSumaTotal(puntajes[i]);
 			promedios[i] = calcularPromedio(puntajes[i]);
 
-			System.out.println(" Jugador: " + (i + 1));
-			System.out.println("Puntajes: ");
+			System.out.println("Jugador " + (i + 1) + " - Puntaje Total: " + puntuacionesTotal[i] + ", Promedio: " + promedios[i]);
+			
+			if (puntuacionesTotal[i] > puntuacionMax) {
+				puntuacionMax =  puntuacionesTotal[i];
+				jugadorGanador = i;
+			}
 		}
-	}
+
+		System.out.println("El jugador con la puntuación más alta es: Jugador " + (jugadorGanador + 1));
+		
+	}	
 	
-	//Descripción: El método calcularSumaTotal permite calcular los puntos de los jugadores en cada ronda
+	//Descripción: El método calcularSumaTotal permite calcular los puntos de los jugadores en cada ronda jugada.
 	// @param int[] numeros
     public int calcularSumaTotal(int[] numeros) {
         int suma = 0;
@@ -93,16 +97,20 @@ public class AtlasPuntuaciones {
 		return (double) calcularSumaTotal(numeros) / numeros.length; 
 	}
 
-	/**
-	 * Descripción: El método encontrarMayor permite ...
-	 * @param double[] numeros
-	 * @return 
-	 */
-    /*public double encontrarMayor(double[] numeros) {
-        // Completar
-    }*/
+	//Descripción: El método encontrarMayor permite hallar el jugador con mayor puntaje acumulado.
+	//@param double[] numeros
+    public double encontrarMayor(double[] numeros) {
+		if (numeros == null || numeros.length == 0) {
+			return 0.0;
+		}
 
-	
-
+		double mayor = numeros[0];
+		for (double numero : numeros) {
+			if (numero > mayor) {
+				mayor = numero;
+			}
+		}
+		return mayor;
+    }
 	
 }
